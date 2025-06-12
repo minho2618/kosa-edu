@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"workshop06","l":"com.edu.refactoring"},{"m":"workshop06","l":"com.edu.refactoring.test"}];updateSearchResults();

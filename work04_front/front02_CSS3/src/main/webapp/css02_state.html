@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Insert title here</title>
+	<style type="text/css">
+		.accent {
+			color: crimson;
+		}
+		
+		.larger {
+			font-size: 20px;
+		}
+		
+		#para {
+			border: 1px solid black;
+		}
+	</style>
+	<script type="text/javascript">
+		function push() {
+			alert("버튼이 클릭되었습니다.");
+		}
+	</script>
+</head>
+<body>
+<h2>State Attribute</h2>
+<form action="A">
+	<h3 id="box">Enabled</h3>
+	<input type="text" name="name" size=5/>
+	
+	<h3>Disabled</h3>
+	<input type="text" disabled="disabled">
+	
+	<h3>Readonly</h3>
+	<input type="text" name="title" value="KOSA" readonly="readonly">
+	
+	<h3>Required</h3>
+	<input type="text"   name="number"  required="required">
+	<input type="submit" value="SEND">
+	
+	<input type="button" value="Button" onclick="push()">	
+	<!-- button 태그로 버튼을 생성하면 내부적으로 submit 이벤트가 기본으로 작동한다!! -->
+	<button>Button2</button>
+</form>
+<hr>
+<h1 class="accent" id="para">This heading will not be affected</h1>
+<p class="accent">This paragraph will be red and center-aligned.</p>
+<p class="accent">This paragraph will be red, center-aligned, and in a large font-size.</p> 
+<p class="accent larger">CSS is the language we use to style an HTML document.</p> 
+</body>
+</html>
+
+
+

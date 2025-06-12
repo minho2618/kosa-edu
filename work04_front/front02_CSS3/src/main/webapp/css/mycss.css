@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* 모든 태그를 선택자로 지정 */
+		* {
+			margin: 10px 20px;
+			/* margin: 100px 200px 300px 400px; */
+		}
+		
+		/* 
+			h2태그와 h4태그를 동시에 선택자로 지정 
+			가로사이즈를 화면의 45%
+			경계선 1px 실선 초록색
+			경계선과 내용사이의 여백을 상하 80px, 좌우 30px
+		*/
+		h2, h4 {
+			width: 45%;
+			border: 1px solid green;
+			padding: 80px 30px;
+		}		
+		
+h2 {
+	color: navy;	
+}

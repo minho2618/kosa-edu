@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>Insert title here</title>
+	<style type="text/css">
+		/* 
+		부모엘레먼트가 있고 
+		그 안에 자식 엘러먼트가 있는 상황에서
+		자식에서 float 속성을 부여하게되면 
+		부모의 범위를 벗어나면서 결과적으로
+		레이아웃이 아주 망가져버리게 된다.
+		
+		해결책
+		1. 부모 요소의 범위를 아주 크게 잡는다.
+		2. overflow 속성값을 hidden으로 잡는다.
+		   (자식 요소가 아닌 부모 요소에서 지정해야 한다!!)
+		 */
+		#parent {
+			border: 1px solid black;
+			padding: 10px;
+			overflow: hidden;
+		}
+		
+		#child {
+			margin: 0px;
+			border: 1px solid tomato;
+			float: left;
+		}
+		
+		#article {
+			border: 1px solid green;
+			margin-top: 10px;
+			float: right;
+		}
+	</style>
+</head>
+<body>
+<div id="parent">
+	<div id="child">
+			KOSA MSA 3차 과정
+	</div>	
+</div>
+<div id="article">
+	2025-06-11 Today FrontUI Schedule
+</div>
+</body>
+</html>

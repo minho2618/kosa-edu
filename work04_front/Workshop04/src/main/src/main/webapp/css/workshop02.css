@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+body {
+	border: 1px dotted black;
+	width: 1000px;
+	margin: 20px auto;
+}
+
+h1 {
+	color: crimson;
+}
+
+#header {
+	text-align: center;
+}
+
+#menu > ul {
+	text-align: center;
+	list-style-type: none;
+}
+
+#section1 {
+	width: 260px;
+	float: left;
+	padding: 10px 20px;
+}
+
+#section2, #section3 {
+	width: 660px;
+	float: right;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#footer {	
+	clear: both;
+	color: blue;
+	text-align: center;
+	padding: 20px 0;
+}
