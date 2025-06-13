@@ -1,0 +1,26 @@
+<!--  
+하나의 함수를 통해서 보였다 / 안보였다를 조절해야
+더 간단한 js코드를 완성할 수 있다.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	function divShow(command) {
+		//document.querySelector(".alert-box").style.display=command;
+		document.querySelector(".alert-box").setAttribute('style', 'display:' + command);
+	}
+	</script>
+</head>
+<body>
+	<h2>Display 속성 잘 이용하기</h2>
+	<div id="alert" class="alert-box">
+	Alert Button
+	</div>
+	<br />
+	<button onclick="divShow('block')" class="show">열기</button>
+	<button onclick="divShow('none')" class="hidden">닫기</button>
+</body>
+</html>

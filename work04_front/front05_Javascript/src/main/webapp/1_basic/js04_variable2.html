@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>es6::const(전역, 상수), let(로컬), var</title>
+</head>
+<body>
+	<script type="text/javascript">
+	const name = "이민호";
+	const stuName = "장영민"; // 전역변수
+	
+	console.log(name);
+	console.log(stuName);
+	
+	showInfo();
+	
+	function showInfo() {
+		let address = "혜화동";
+		let myAddr = "사당동"; // 전역변수
+		
+		console.log("이름: " + name + ", 주소: " + address);
+		console.log("이름: " + stuName + ", 주소: " + myAddr);
+	}
+	
+	//console.log("이름: " + name + ", 주소: " + address);
+	//console.log("이름: " + stuName + ", 주소: " + myAddr);
+	</script>
+</body>
+</html>

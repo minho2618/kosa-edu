@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<!-- 
+	script 부분을 완성합니다
+	1. 버튼 클릭하면 span영역이 보이도록 작성
+	2. id가 today인 영역의 내용을 Hello Everyone~~으로 변경
+	   글자색은 blue
+	3. id가 edu인 영역의 내용을 ChartJS 수업으로 변경
+	   글자색은 blue
+	-->
+	<style type="text/css">
+	.edit {
+		display: none;
+	}
+	</style>
+	<script type="text/javascript">
+		function showEdit() {
+			var edit = document.querySelector(".edit");
+			edit.style.display = "inline";
+			
+			var today = document.querySelector("#today");
+			today.innerHTML = "Hello Everyone~~";
+			today.style.color="blue";
+			
+			var edu = document.querySelector("#edu");
+			edu.innerHTML = "ChartJS 수업";
+			edu.style.color="blue";
+		}
+	</script>
+</head>
+<body>
+	<h2 id="today">오늘은 금요일입니다.</h2>
+	<h2 id="edu">KOSA 금요일 자바스크립트 수업</h2>
+	<hr />
+	<button onclick="showEdit()">Input Name</button>
+	<span class="edit">Name <input type='text' name="name" /></span>
+</body>
+</html>

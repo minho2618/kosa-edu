@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	function showBtn() {
+		document.querySelector(".alert-box").style.display="block";
+	}
+	
+	function hiddenBtn() {
+		document.querySelector(".alert-box").style.display="none";
+	}
+	</script>
+</head>
+<body>
+	<h2>Display 속성 잘 이용하기</h2>
+	<div id="alert" class="alert-box">
+	Alert Button
+	</div>
+	<br />
+	<button onclick="showBtn()" class="show">열기</button>
+	<button onclick="hiddenBtn()" class="hidden">닫기</button>
+</body>
+</html>
