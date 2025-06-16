@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<style type="text/css">
+		.chart-container {
+			width: 350px;
+			height: 350px;
+			margin: 0 auto;
+			margin-top: 140px;
+			
+			border: 1 solid #ddd;
+			padding: 40px;
+			border-radius: 8px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Employee's Salary And Bonus</h1>
+			<div class="chart-container">
+			<canvas id='sal-chart'></canvas>
+		</div>	
+		<div class="chart-container">
+			<canvas id='bonus-chart'></canvas>
+		</div>
+	</div>	
+<script>
+	const ctx = document.getElementById('sal-chart');
+	const ename = ['SMITH', 'FORD', 'TURNER', 'KING', 'ADAMS'];
+	
+	let emp_sal_data = {
+		label: 'Employee Salary',
+		data: [800, 2300, 2100, 5000, 3000],
+		backgroundColor: 'rgba(255, 0, 0, 0.3)',
+		borderWidth: 4,
+		borderColor: 'rgba(200, 0, 0, 1)',
+	};
+	
+	let emp_bonus_data = {
+			label: 'Employee Bonus',
+			data: [100, 50, 70, 0, 60],
+			// 그래프 안의 배경색
+			backgroundColor: 'rgba(0, 0, 255, 0.5)',
+			borderWidth: 2,
+			borderColor: 'rgba(0, 0, 200, 1)',
+		};
+	
+	let config = {
+		type: 'line',
+		data: {
+			labels: ename,
+			datasets: [emp_sal_data, emp_bonus_data]
+		},
+		options: {
+			maintainAspectRatio: false,
+		}
+	}
+	
+	new Chart(ctx, config);
+</script>
+</body>
+</html>

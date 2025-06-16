@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>1. onclick=함수() 방법</title>
+<script>
+	function push() {
+		//1. content 영역을 받아와서
+		const content = document.querySelector("#content");
+		
+		// 2. 1번의 영역에 Hello Javascript~ 내용으로 변경되도록 한다.
+		content.innerHTML = "<p style=\"color: crimson\">Hello Javascript~</p>"
+		
+	}
+</script>
+</head>
+<body>
+	<h1>Javascirpt란?</h1>
+	<p id="content">JavaScript is the world's most popular programming language.</p>
+	<button onclick="push()">CLICK</button>
+</body>
+</html>

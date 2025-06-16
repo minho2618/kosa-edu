@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>여러값을 선택하는 폼 :: CheckBox, Select</title>
+	<script type="text/javascript">
+		function choiceMenu() {
+			let menu = document.frm.menu;
+			//alert(menu.length);
+			
+			// 1. 내가 선택한 메뉴를 alert창으로 출력
+			/* for (let i = 0; i < menu.length; i++) {
+				// 내가 선택한 값만 받아오는 코드가 하나 추가
+				if (menu[i].checked) // 선택한 메뉴라면 
+					alert(menu[i].value);
+			} */
+			
+			// 2. alert 창 한 번만 뜨고 선택한 메뉴가 여러개 다 나오도록
+			/* let str = "";
+			for (let i = 0; i < menu.length; i++) {
+				if (menu[i].checked)
+					str += menu[i].value + " ";
+			}
+			alert(str); */
+			
+			// 3. alert 창 한 번만 뜨고 선택한 메뉴가 여러개 다 나오도록
+			//    만약에 메뉴를 하나도 선택하지 않았다면 "하나 이상의 메뉴는 꼭 선택바랍니다."
+			
+			let str = "";
+			for (let i = 0; i < menu.length; i++) {
+				if (menu[i].checked)
+					str += menu[i].value + " ";
+				menu[i].checked = false;
+			}
+			
+			if (str !== "")
+				alert(str);
+			else
+				alert("하나 이상의 메뉴는 꼭 선택바랍니다.");
+		}
+	</script>
+</head>
+<body>
+	<h2>CheckBox Form</h2>
+	<form action="#" name="frm">
+		<h3>내일 점심 메뉴를 모두 선택하세요.</h3>
+		<input type="checkbox" name="menu" value="김치찌개" />김치찌개<br />
+		<input type="checkbox" name="menu" value="돈가쓰" />왕돈가쓰<br />
+		<input type="checkbox" name="menu" value="카레라이스" />인도카레<br />
+		<input type="checkbox" name="menu" value="비빔밥" />비빔밥<br />
+		<input type="button" value="메뉴선택" onclick="choiceMenu()" />
+	</form>
+</body>
+</html>

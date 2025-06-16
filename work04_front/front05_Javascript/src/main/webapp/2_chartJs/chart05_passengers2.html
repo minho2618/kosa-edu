@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8">
+	<title>Passengers</title>
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<style type="text/css">
+		.chart-contanier {
+			width: 600px;
+			height: 600px;
+			border: 2px solid #ddd;
+			border-radius: 6px;
+			margin: 0 auto;
+			padding: 10px;			
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>대한항공 년도별 승객수 누적현황</h1>
+		</div>
+		<div class="chart-contanier">
+			<canvas id="line-chart"></canvas>
+		</div>
+	</div>
+<script>
+	const ctx = document.querySelector("#line-chart");
+	let month = ['1월 누적 승객수', '2월 누적 승객수', '3월 누적 승객수', '4월 누적 승객수', '5월 누적 승객수', '6월 누적 승객수', 
+		'7월 누적 승객수', '8월 누적 승객수', '9월 누적 승객수', '10월 누적 승객수' ,'11월 누적 승객수', '12월 누적 승객수'];
+	let data_2023 = {
+			label:'2023년',
+			data:[100,98,67,57,67, 140, 160, 110,99,98, 110, 115],
+			backgroundColor:'rgba(203,206,145, .4)',
+			borderColor:'crimson',
+			borderWidth:2,
+	};
+	let data_2024 = {
+			label:'2024년',
+			data:[90,97,77,60,67, 130, 150, 100,90,90, 100, 110],
+			backgroundColor:'rgba(203,206,145, .4)',
+			borderColor:'SlateBlue',
+			borderWidth:2,
+	};
+	let config = {
+		type: 'line',
+		data: {
+			labels: month,
+			datasets: [data_2023, data_2024],
+		},
+		options: {
+			maintainAspectRatio: false,
+			scales: {
+				x: {
+					ticks: {
+						maxRotation: 75,
+						minRotation: 75
+					}
+				},
+				y: {
+					stacked: true,
+					min: 0,
+					max: 450,
+				}
+			},
+			
+		}
+	}	
+	
+	new Chart(ctx, config);
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Toggle :: 껐다 | 켰다</title>
+</head>
+<body>
+	<h2>What is JavaScript?</h2>
+	<p>It can update and change both HTML and CSS.</p>
+	<p>The example below "finds" an HTML element (with id="demo"), 
+	and changes the element content (innerHTML) to "Hello JavaScript"</p>
+	<button id="turnOn">Turn on the light</button>
+	<img style="width: 150px"
+	src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBjIqomV_U0yzzlg3NlB5qtbYCJQRj3AulUA&usqp=CAU">
+	<button id="turnOff">Turn off the light</button>
+</body>
+<script>
+document.querySelector("button").onclick = toggle;
+
+function toggle() {
+	let img = document.querySelector("img");
+	
+	if (status) {
+		img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkhVXo0PStCaz-E5mudcAtsDhV53vPXqpUFQ&usqp=CAU";
+		status = false;
+	} else {
+		img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBjIqomV_U0yzzlg3NlB5qtbYCJQRj3AulUA&usqp=CAU";
+		status = true;
+	}
+}
+</script>
+</html>

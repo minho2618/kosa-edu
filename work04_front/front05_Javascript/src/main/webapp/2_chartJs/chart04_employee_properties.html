@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<style type="text/css">
+	.chart-container {
+		width: 350px;
+		height: 350px;
+		margin: 0 auto;
+		margin-top: 140px;
+		border: 1px solid #ddd;
+		padding: 40px;
+		
+		display: flex;
+		display: inline-block; /* 이걸 해줘야 flex가 먹힌다. */
+	}
+	
+	
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Employee's Salary and Bonus</h1>
+		<div class='chart-container'>
+			<canvas id='line-chart'></canvas>
+		</div>
+		<div class='chart-container'>
+			<canvas id='bar-chart'></canvas>
+		</div>
+	</div>
+<script>
+	const ctx = document.querySelector('#line-chart');
+	const ename = ["Smith", "Ford", "Turner", "King", "Adams"];
+	let emp_sal_data = {
+			label: 'Employee Salary',
+			data: [800, 2300, null, 5000, 3000],
+			// 그래프 안의 배경색
+			backgroundColor: 'rgba(255, 0, 0, 0.3)',
+			borderWidth: 4,
+			borderColor: 'rgba(200, 0, 0, 1)',
+			// chart를 그리는 데 있어서 중요한 속성들...
+			// Chart Type < Line Chart < Dataset Properties
+			
+			// 1. point Style을 바꾸기
+			pointStyle: 'triangle',
+			
+			// 2. 그래프의 선은 없애고 값만 나오게
+			//showLine:false,
+			
+			// 3. Turner가 인턴사원이라서 sal과 bonus가 null
+			spanGaps: true,
+			stepped: true,
+		};
+	let emp_bonus_data = {
+			label: 'Employee Bonus',
+			data: [100, 50, null, 0, 60],
+			// 그래프 안의 배경색
+			backgroundColor: 'rgba(0, 0, 255, 0.5)',
+			borderWidth: 4,
+			borderColor: 'rgba(0, 0, 200, 1)',
+			// 1. point Style을 바꾸기
+			pointStyle: 'triangle',
+			
+			// 2. 그래프의 선은 없애고 값만 나오게
+			//showLine:false,
+			
+			// 3. Turner가 인턴사원이라서 sal과 bonus가 null
+			spanGaps: true,
+			stepped: true,
+		}
+	
+	// type, data, options 이 세가지 구성요소를 config에 담는다.
+	let config = {
+		type: 'line',
+		data: {
+			labels: ename,
+			datasets: [emp_sal_data, emp_bonus_data]
+		},
+		options: {
+			maintainAspectRatio: false,
+		}
+	}
+	
+	new Chart(ctx, config);
+	
+	const ctx2 = document.querySelector('#bar-chart');
+	const ename2 = ["Smith", "Ford", "Turner", "King", "Adams"];
+	let emp_sal_data2 = {
+			label: 'Employee Salary',
+			data: [800, 2300, null, 5000, 3000],
+			// 그래프 안의 배경색
+			backgroundColor: 'rgba(255, 0, 0, 0.3)',
+			borderWidth: 4,
+			borderColor: 'rgba(200, 0, 0, 1)',
+			// chart를 그리는 데 있어서 중요한 속성들...
+			// Chart Type < Line Chart < Dataset Properties
+			
+			// 1. point Style을 바꾸기
+			pointStyle: 'triangle',
+			
+			// 2. 그래프의 선은 없애고 값만 나오게
+			//showLine:false,
+			
+			// 3. Turner가 인턴사원이라서 sal과 bonus가 null
+			spanGaps: true,
+			stepped: true,
+		};
+	let emp_bonus_data2 = {
+			label: 'Employee Bonus',
+			data: [100, 50, null, 0, 60],
+			// 그래프 안의 배경색
+			backgroundColor: 'rgba(0, 0, 255, 0.5)',
+			borderWidth: 4,
+			borderColor: 'rgba(0, 0, 200, 1)',
+			// 1. point Style을 바꾸기
+			pointStyle: 'triangle',
+			
+			// 2. 그래프의 선은 없애고 값만 나오게
+			//showLine:false,
+			
+			// 3. Turner가 인턴사원이라서 sal과 bonus가 null
+			spanGaps: true,
+			stepped: true,
+		}
+	
+	// type, data, options 이 세가지 구성요소를 config에 담는다.
+	let config2 = {
+		type: 'bar',
+		data: {
+			labels: ename2,
+			datasets: [emp_sal_data2, emp_bonus_data2]
+		},
+		options: {
+			maintainAspectRatio: false,
+		}
+	}
+	
+	new Chart(ctx2, config2);
+</script>
+</body>
+</html>

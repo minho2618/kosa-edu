@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>forEach 사용법</title>
+	<script type="text/javascript">
+		let count = 0;
+		
+		onload = () => {
+			setInterval(() => {
+				let message = [
+					"혜화지점에 새로운 교육장을 오픈했습니다",
+					"여러분의 FullStack 기술 향상을 보장합니다.",
+					"실전능력을 위한 워크샵이 기술마다 준비되어 있습니다."
+				];
+				
+				//1. h3영역을 변수로 받아온다
+				let banner = document.querySelector('h3');
+				
+				// 2. [] 안에 있는 값들을 바꿔가면서 출력
+				banner.innerHTML = message[count++]; // 0, 1, 2
+				
+				// 3. 모든 메세지를 다 보여주면 다시 0으로 복귀
+				if (count === message.length)
+					count = 0;
+			}, 3000);
+		};
+		
+		
+		
+		window.onload = onload
+	</script>
+</head>
+<body>
+	<h1>KOSA Banner Advertiser...</h1>
+	<h3 style="color: crimson">====== KOSA Education Academy ======</h3>
+	
+</body>
+</html>

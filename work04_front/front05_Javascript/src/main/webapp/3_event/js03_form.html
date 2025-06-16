@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Form 값 핸들링</title>
+	<script>
+	// 1. form에 입력된 값을 받아서	... alert창으로 출력
+	function showName() {
+		const nick = document.querySelector('#nick');		
+		alert(nick.value);
+		nick.value = "";
+		document.querySelector('#hobby').focus;
+	}
+	
+	function showHobby() {
+		const hobby = document.frm.hobby;
+		alert(hobby.value);
+		hobby.value = "";
+	}
+	
+	</script>
+</head>
+<body>
+	<h2>Form Event Handling</h2>
+	<form action="FS" name="frm">
+		닉네임<input type="text" name="nick" id="nick" />
+		<input type="button" value="닉네임보기" onclick="showName()" />
+		<br />
+		<br />
+		취미<input type="text" name="hobby" id="hobby" />
+		<input type="button" value="취미보기" onclick="showHobby()" />
+	</form>
+</body>
+</html>
