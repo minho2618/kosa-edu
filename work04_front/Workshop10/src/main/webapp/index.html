@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<style type="text/css">
+	.chart-contanier {
+		width: 600px;
+		height: 600px;
+		margin: 0px auto;
+		margin-top: 30px; 
+	}
+	</style>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<h2 class="jumbotron text-center ">Oracle Employee Job</h2>
+	<div class="contanier chart-contanier">
+		<canvas id="employee-chart"></canvas>
+	</div>
+</body>
+<script type="text/javascript">
+	const ctx = document.querySelector('#employee-chart');
+	
+	let jobs = ['Analyst', 'Manager', 'Engineer', 'SalesMan', 'Clerk'];
+	
+	let employee_data = {
+			label: '직원수',
+			data:[350, 1000, 2800, 3560, 860],
+			 backgroundColor: [
+			      'rgb(255, 99, 132)',
+			      'rgb(154, 162, 235)',
+			      'rgb(255, 205, 86)',
+			      'rgb(255, 0, 86)',
+			      'rgb(0, 162, 235)',
+			],
+			hoverOffset: 36,
+		};
+	
+	let config = {
+		type: 'pie',
+		data: {
+			labels: jobs,
+			datasets: [employee_data],
+		},
+		options: {
+			
+		},
+	}
+	
+	new Chart(ctx, config);
+	</script>
+</html>

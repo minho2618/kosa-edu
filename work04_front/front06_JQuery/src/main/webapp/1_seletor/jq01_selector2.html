@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>html() | innerHTML, text() | innerText, val() | value을 구분</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(() => {
+			// JQuery는 head에서 선언됨
+			
+			// 버튼을 클릭하면
+			// p, h2 태그 부분의 글자색이 blue로 바뀌고 
+			// 첫번째 p 태그의 내용은 첫번째 문장입니다로 변경
+			// 버튼이 사라지도록
+			
+			$('button').click(() => {
+				$('p, h2').css('color', 'blue');
+				$('p:eq(0)').html('<p style="color: red">첫번째 문장입니다.</p>');
+				$('p:eq(2)').val('세번째 문장입니다.'); // <form> 태그가 아니므로 동작하지 않음
+				$('button').css('display', 'none');
+			});
+		});		
+	</script>
+</head>
+<body>
+	<h2 id="header">	
+		<span>This is a heading</span>
+	</h2>	
+	<p>This is a paragraph.</p>
+	<p class="content">This is another paragraph1.</p>
+	<p class="content theme">This is another paragraph2.</p>	
+	
+	<button>Click me to hide paragraphs</button>
+</body>
+</html>

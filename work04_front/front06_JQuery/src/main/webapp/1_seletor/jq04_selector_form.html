@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function() {
+		$('input[type=text]').val("James");
+		let name = $('input[type=text]').val();
+		$('#result').html(`<h3 style='color: blue'> 고객 이름은 ${name}입니다.</h3>`);
+	});
+</script>
+</head>
+<body>
+	<form action="jq04_result.jsp" method="get">
+		<input type="text" name="name">
+		<input type="submit">
+	</form>
+	<div id="result">		
+		 
+	</div>
+</body>
+</html>
+
+
+

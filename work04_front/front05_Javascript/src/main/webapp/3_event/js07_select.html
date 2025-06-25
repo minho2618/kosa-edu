@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	function changeLine() {
+		// 1. select 폼을 받아와서...subway 변수에 할당
+		let subway = document.querySelector('#subway');
+		
+		// 2. select 폼에서 선택한 값을 alert 창으로 출력
+		// console.log(subway.value);
+		// alert(subway.value);		
+		// 3. (조건으로 하나의 노선을 선택했다면 출력)(하나의 노선도 선택하지 않았다면 메세지)
+		if (subway.value !== null) {
+			alert(subway.value + "호선");
+		} else {
+			alert("출퇴근시 사용하는 노선을 하나 선택하세요");
+		}
+		
+		// 4. 1~3 구현 되었다면 2번을 주석처리하고 / result 영역에 파란 글씨 색깔로 선택한 노선이 출력되도록 구현
+		document.querySelector('#result').innerHTML = "<h3 style='color: blue'>" + subway.value + "</h3>";
+	}
+	</script>
+</head>
+<body>
+	<h2>Select Form</h2>
+	<form action="#" name="frm">
+		<select id="subway" onchange="changeLine()"> <!-- onclick 사용 X -->
+			<option value="===========">========= 지하철 호선 =========</option>
+			<option value="1">1호선</option>
+			<option value="2">2호선</option>
+			<option value="3">3호선</option>
+			<option value="4">4호선</option>
+			<option value="5">5호선</option>
+		</select>
+	</form>
+	
+	<div id="result">
+		
+	</div>
+</body>
+</html>

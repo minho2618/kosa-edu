@@ -57,7 +57,29 @@
   </style>
   <script type="text/javascript">
   	function btn(){
-  		 location.href = "/ws02_front/index.html";
+  		 location.href = "index.html";
+  	}
+  	
+  	function login(event) {
+  		const email = document.querySelector('#email');
+  		const password = document.querySelector('#password');
+  		
+  		if (email.value.trim() === "") { // 공백을 제거
+  			alert("이메일을 입력하시오");
+  			email.focus();
+  			return false;
+  		} else if (password.value.trim() === "") { // 공백을 제거
+  			alert("비밀번호를 입력하시오");
+  			password.focus();
+  			return false;
+  		} else {
+  			alert("모든 정보 입력 완료");
+  			return true;
+  		}
+  			
+  		document.querySelector('form').addEventListener('submit', (event) => {
+  			event.preventDefault();
+  		});
   	}
   </script>
   <title>KB My Life - login</title>
@@ -76,7 +98,7 @@
     <div id="banner">지금 당신의 행복! KB Life!</div>
     <div id="login">
       <h1>Login</h1>
-      <form action="">
+      <form action="page">
         <div class="form-item">
           <label for="email">이메일</label>
 		      <input type="text" id="email">
@@ -86,12 +108,10 @@
 		      <input type="password" id="password">
         </div>
         <hr>
-        <button>로그인</button>
-        
+        <button onclick="login(event)">로그인</button>        
         <button type="button" onclick="btn()">홈</button>
       </form>
     </div>
-
   
      <footer>
       <ul>

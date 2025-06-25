@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery Selector...</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		/* $(document).ready({ // == window.onload
+			
+		});	 */
+		
+		$(() => { // == $(document).ready
+			$('#header > span').css('color', 'crimson').html('Jquery Selector Test');
+		
+			$('h2 span').css('background-color', 'grey');
+			
+			$('p:first').html("첫번째 문장입니다.");
+			$('p').last().html("마지막 문장입니다.");
+			
+			// $('p:second').html("두번째 문장입니다."); // second는 없음
+			$('p:eq(1)').html("두번째 문장입니다."); // 동일한 태그가 여러개 존재할때 사용하는 선택자
+			
+			// 4. 버튼이 보이지 않도록
+			$('button').css('display', 'none');
+			
+			// 5. p태그와 h2태그를 모두 선택자로 지정...글자를 가운데 정렬
+			$('p, h2').css('text-align', 'center');
+			
+			// 6. 클래스속성 값이 theme를 선택자로...경계선을 지정
+			$('.theme').css('border', '1px solid blue');
+		});
+		
+	</script>
+</head>
+<body>
+	<h2 id="header">	
+		<span>This is a heading</span>
+	</h2>	
+	<p>This is a paragraph.</p>
+	<p class="content">This is another paragraph1.</p>
+	<p class="content theme">This is another paragraph2.</p>	
+	
+	<button>Click me to hide paragraphs</button>
+	<b>이 부분은 bold 하게 출력됩니다.</b>
+</body>
+</html>

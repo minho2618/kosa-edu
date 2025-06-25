@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>on 함수의 사용법..</title>
+	<style>
+	#present {
+		border: 2px solid #ddd;
+		
+	}
+	
+	.color {
+		color: crimson;
+	}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		$(function(){  
+			$('#present').on('click', () => {
+				$('#future').append(`<h2 id="hello">KOSA MSA 3차 Frontend Project Start!!</h2>`)
+							.addClass('color');
+			});
+			
+			$('#future').on('click', '#hello', () => {
+				alert('쉬었다합니다.');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="present">
+		<h1>Syntax :: $('selector').on('click', '#hello', hello)</h1>	
+		<p>아이디값이 hello인 영역을 클릭하면 hello 함수가 그 때 호출될 것이다.</p>
+		<p>지금은 hello 영역이 보이지 않고 나중에 동적으로 그 영역이 만들어집니다.</p>
+		<p>on은 미래에 동적으로 생성되는 영역을 클릭할 경우를 위해서 만들어진 함수!!</p>
+	</div>
+	<div id="future">
+		
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

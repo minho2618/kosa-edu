@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Form에 입력된 값을 서버로 전달</title>
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<style type="text/css">
+	
+	</style>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(() => {	
+		/* $('[type=submit]').on('click', (e) => {
+			alert("Submit...");
+		}); */
+		
+		$('#frm').submit((e) => {
+			/*
+			1. id, name 폼의 공란을 확인...공백일 때 alert창으로 메시지, 마우스 포커스 맞추기, 페이지가 안넘어가도록
+			2. checkbox...하나 이상의 취미를 선택하도록 / 하나도 선택안되었다면...알아서 메세지 띄우고
+			   하나 이상의 취미가 선택되었다면...$.each 사용해서 메시지 띄우기...alert창 한번만
+			3. 서버로 전송하기 직전...confirm 창 사용...선택한 취미 갯수 띄우기
+			*/
+			
+			// 1.
+			if ($('#id').val().trim() === "") {
+				alert("ID를 입력하시오.");
+				$('#id').focus();
+				e.preventDefault();
+				return;
+			}
+			
+			if ($('#name').val().trim() === "") {
+				alert("NAME를 입력하시오.");
+				$('#name').focus();
+				e.preventDefault();
+				return; 
+			}			
+			
+			// 2.
+			let arr = $('[name=hobby]:checked');			
+			if (arr.length == 0) {
+				alert("취미를 선택하시오.");
+				e.preventDefault();
+				return; 
+			}
+			
+			console.log(arr);
+			
+			let str = "";
+			$.each(arr, (index, item) => {
+				str += item.value + " "; // Javascirpt
+				// str += $(item).val(); // JQuery
+			});
+			
+			alert(str);
+			
+			// 3.
+			if (!confirm(`${arr.length}개의 취미를 선택하셨습니다...전송하시겠습니까?`)) {
+				e.preventDefault();
+				return
+			}
+			 
+		});
+	});
+	</script>
+</head>
+<body>
+	<!-- 폼값을 가지고 action에 등록된 페이지로 이동...submit -->
+	<form action="06_result.jsp" id=frm>
+		ID <input type="text" name="id" id="id" /><p></p>
+		NAME <input type="text" name="name" id="name" /><p></p>
+		
+		<strong>당신의 취미를 있는대로 다 고르세요.</strong><br>
+		<input type="checkbox" name="hobby" value="fishing">낚시<br>
+		<input type="checkbox" name="hobby" value="music">음악듣기<br>
+		<input type="checkbox" name="hobby" value="climbing">등산<br>
+		<input type="checkbox" name="hobby" value="driving">드라이브<br>
+		
+		<input type="submit" value="ServerSend">
+	</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.star{border:2px solid black; width:200px; height:250px;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){  		
+		$('img').addClass('star');
+		
+		/* setInterval(() => {
+			$('body').append($('img:eq(0)'));
+		}, 2000); */
+		
+		// 4. 내용에 Tag를 부착하려면 appendTo()
+		// $('img:eq(0)').append($('body'));
+		$('img:eq(0)').appendTo($('body'));		
+	});
+</script>
+</head>
+<body>
+	<img src='../image/1.jpg'>
+	<img src='../image/2.jpg'>
+	<img src='../image/3.jpg'>
+	<img src='../image/4.jpg'>
+</body>
+</html>
+
+
+

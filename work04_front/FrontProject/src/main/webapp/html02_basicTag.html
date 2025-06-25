@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ScopeTag</title>
+	<style type="text/css"> 
+		/* body {
+			width: 800px;
+			height: 500px;
+			border: 1px solid grey;
+		}	 */	
+		
+		#wrap {
+			width: 800px;
+			height: 500px;
+			border: 5px dotted navy;
+			margin: 0 auto;
+		}
+		
+		#header {
+			text-align: center;
+			color: crimson;
+			font-weight: bold;
+			font-family: sans-serif;
+		}
+		
+		
+		#order {
+			float: left;
+			width: 250px;
+			margin-left: 90px;
+		}
+		
+		#unorder {
+			float: right;
+			width: 250px;
+			margin-right: 70px;
+		}
+		
+		#order, #unorder {
+			margin-top: 50px;
+			font-size: 17px;
+			border: 2px dashed olive;
+			border-radius: 20px;
+			padding: 20px;
+			background-color: rgba(255, 99, 102, 0.2);
+		}
+	</style>
+	<script type="text/javascript">
+		function push() {
+			alert("오늘은 여기까지 작업을 마치겠습니다~~");
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<h1>Layout with Scope Tag</h1>
+			<button onclick="push()">CLICK ME!!!</button>
+		</div>
+		<div id="order">
+			<p>Order List</p>
+			<p>순번을 가지는 목록</p>
+			<ol>
+				<li>HTML5</li>
+				<li>CSS3</li>
+				<li>JavaScript</li>
+			</ol>
+		</div>
+		<div id="unorder">
+			<p>UnOrder List</p>
+			<p>순번을 가지지 않는 목록</p>
+			<ul>
+				<li>HTML5</li>
+				<li>CSS3</li>
+				<li>JavaScript</li>
+			</ul>
+		</div>	
+	</div>
+</body>
+</html>
