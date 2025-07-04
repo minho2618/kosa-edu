@@ -59,7 +59,7 @@ public class FrontController extends HttpServlet {
 				path = "find_ok.jsp";
 			}
 		} catch(SQLException e) {
-			
+			System.out.println(e.getMessage());
 		}
 		
 		return path;
