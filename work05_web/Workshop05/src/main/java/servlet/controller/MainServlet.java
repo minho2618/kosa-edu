@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import servlet.model.User;
 import servlet.model.UserDAOImpl;
@@ -39,8 +40,11 @@ public class MainServlet extends HttpServlet {
 		User user = null;
 		try {
 			 user = UserDAOImpl.getInstance().login(id, password);
-			if (user != null) {
-				request.setAttribute("user", user);
+			 if (user != null) {
+				//request.setAttribute("user", user);
+				HttpSession session = request.getSession();
+				session.setAttribute("user", user);
+				
 				request.getRequestDispatcher("loginSuccess.jsp").forward(request, response);
 			} else {
 				response.sendRedirect("./error/error.html");
