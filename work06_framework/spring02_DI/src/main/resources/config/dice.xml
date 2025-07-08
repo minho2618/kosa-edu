@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 싱글톤으로 생성 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+												 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="diceA" class="spring.service.dice.impl.DiceAImpl" />
+	<bean id="diceB" class="spring.service.dice.impl.DiceBImpl" />
+	<bean id="diceC" class="spring.service.dice.impl.DiceCImpl" />
+	<bean id="diceD" class="spring.service.dice.impl.DiceDImpl" />
+
+	<!-- player01 이름으로 빈을 생성(Player02) | DiceAImpl주입 | 생성자-->
+	<bean id="player01" class="spring.service.dice.play.Player02" >
+		<constructor-arg ref="diceA"></constructor-arg>
+		<!-- <constructor-arg ref="diceA" /> 이렇게도 가능--> 
+	</bean>
+	
+	<bean id="player02" class="spring.service.dice.play.Player02" >
+		<constructor-arg ref="diceB" />
+	</bean>
+	
+	<!-- player01 이름으로 빈을 생성(Player02) | DiceCImpl주입 | setter -->
+	<bean id="player03" class="spring.service.dice.play.Player02" >
+		<property name="dice" ref="diceC"></property>
+	</bean>
+
+	<bean id="player04" class="spring.service.dice.play.Player02" >
+		<property name="dice" ref="diceA" />
+	</bean>
+	
+	<bean id="player05" class="spring.service.dice.play.Player02" >
+		<constructor-arg ref="diceD"></constructor-arg>
+	</bean>
+	
+</beans>

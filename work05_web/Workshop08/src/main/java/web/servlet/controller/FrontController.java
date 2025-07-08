@@ -154,6 +154,6 @@ public class FrontController extends HttpServlet {
 		} catch (Exception e) {
 			return "./error/error.html";
 		}
-		return "book/bookResult.jsp";
+		return "./book/bookResult.jsp";
 	}
 }
